@@ -173,7 +173,6 @@ export default class OTPInputView extends Component<InputProps, OTPInputViewStat
         })
     }
 
-
     clearAllFields = () => {
         const { clearInputs, code } = this.props;
         if (clearInputs && code === "") {
@@ -190,6 +189,7 @@ export default class OTPInputView extends Component<InputProps, OTPInputViewStat
         return (
             <View pointerEvents="none" key={index + "view"} testID="inputSlotView">
                 <TextInput
+                    autoFocus={index === 0 && this.props.autoFocusOnLoad}
                     testID="textInput"
                     underlineColorAndroid='rgba(0,0,0,0)'
                     style={selectedIndex === index ? [defaultTextFieldStyle, codeInputFieldStyle, codeInputHighlightStyle] : [defaultTextFieldStyle, codeInputFieldStyle]}
